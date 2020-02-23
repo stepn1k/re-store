@@ -1,0 +1,32 @@
+.book-list-item {
+  display: flex;
+  margin-bottom: 1rem;
+  max-width: 440px;
+
+  &_image {
+    margin-right: 0.7rem;
+
+    img {
+      width: 150px;
+    }
+  }
+
+  &_info {
+    ul {
+      padding: 0;
+      list-style: none;
+
+      li {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    &-title, &-cost {
+      font-weight: bold;
+    }
+
+    &-author {
+      font-style: italic;
+    }
+  }
+}
