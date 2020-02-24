@@ -2,12 +2,32 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background-color: white;
+  box-shadow: black 0 1px 5px;
+  padding: 0 1rem 0.4rem 1rem;
+  margin-bottom: 1rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+
+  a {
+    color: black;
+
+    &:hover {
+      color: #17a2b8;
+      text-decoration: none;
+    }
+  }
 
   &-logo {
     font-size: 2rem;
+    font-weight: 500;
   }
 
   &-cart {
+    a {
+      color: darkgreen;
+    }
+
     span {
       margin-left: 0.5rem
     }

@@ -1,7 +1,8 @@
 .book-list-item {
   display: flex;
+  justify-content: center;
   margin-bottom: 1rem;
-  max-width: 440px;
+  max-width: 400px;
 
   &_image {
     margin-right: 0.7rem;
