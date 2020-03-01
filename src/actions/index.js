@@ -16,7 +16,14 @@ const booksError = (error) => {
         type: "FETCH_BOOKS_ERROR",
         payload: error
     }
-}
+};
+
+const onBookAdded = (bookId) => {
+    return {
+        type: "BOOK_ADDED_TO_CART",
+        payload: bookId
+    }
+};
 
 const fetchBooks = (dispatch, bookStoreService) => () => {
     dispatch(booksRequested());
@@ -26,4 +33,4 @@ const fetchBooks = (dispatch, bookStoreService) => () => {
         .catch(err => dispatch(booksError(err)));
 }
 
-export {fetchBooks}
+export {fetchBooks, onBookAdded}
