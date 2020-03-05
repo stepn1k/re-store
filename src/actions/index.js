@@ -25,6 +25,20 @@ const onBookAdded = (bookId) => {
     }
 };
 
+const onBookRemoved = (bookId) => {
+    return {
+        type: "BOOK_REMOVED_FROM_CART",
+        payload: bookId
+    }
+};
+
+const onAllBooksRemoved = (bookId) => {
+    return {
+        type: "ALL_BOOKS_REMOVED_FROM_CART",
+        payload: bookId
+    }
+};
+
 const fetchBooks = (dispatch, bookStoreService) => () => {
     dispatch(booksRequested());
     bookStoreService
@@ -33,4 +47,4 @@ const fetchBooks = (dispatch, bookStoreService) => () => {
         .catch(err => dispatch(booksError(err)));
 }
 
-export {fetchBooks, onBookAdded}
+export {fetchBooks, onBookAdded, onBookRemoved, onAllBooksRemoved}
