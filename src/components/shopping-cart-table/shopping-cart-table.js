@@ -58,7 +58,7 @@ const ShoppingCartTable = ({items, total, onDecrease, onIncrease, onDelete}) => 
     );
 };
 
-const mapStateToProps = ({cartItems, cartTotalPrice}) => {
+const mapStateToProps = ({shoppingCart: {cartItems, cartTotalPrice}}) => {
     return {
         items: cartItems,
         total: cartTotalPrice
