@@ -2,7 +2,7 @@ const updateShoppingCart = (state, action) => {
     if (state === undefined) {
         return {
             cartItems: [],
-            cartTotalPrice: 450
+            cartTotalPrice: 0
         }
     }
     switch (action.type) {
@@ -64,11 +64,13 @@ const updateOrder = (state, bookId, quantity) => {
     const itemIndex = cartItems.findIndex(({id}) => id === bookId);
     const item = cartItems[itemIndex];
     const newItem = updateCartItem(book, item, quantity);
+    const newCartItems = updateCartItems(cartItems, newItem, itemIndex);
+    const totalPrice = newCartItems.reduce((total, {price}) => total + price, 0);
 
     return {
-        cartTotalPrice: 0,
-        cartItems: updateCartItems(cartItems, newItem, itemIndex)
-    };
+        cartItems: newCartItems,
+        cartTotalPrice: totalPrice
+    }
 };
 
 export default updateShoppingCart

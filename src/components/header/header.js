@@ -1,9 +1,11 @@
 import React from "react"
 import {Link} from "react-router-dom";
 import "./header.scss"
+import {connect} from "react-redux";
 
 const Header = (props) => {
-    const {numItems, total} = props;
+    const {cartItems, cartTotalPrice} = props;
+    const itemsCount = cartItems.length;
     return (
         <div className="header">
             <div className="header-logo"><Link to="/">ReStore</Link></div>
@@ -11,8 +13,8 @@ const Header = (props) => {
                 <Link to="/cart">
                     <b>
                         <span><i className="fa fa-shopping-cart"></i></span>
-                        <span>{numItems} items</span>
-                        <span>(${total})</span>
+                        <span>{itemsCount} items</span>
+                        <span>(${cartTotalPrice})</span>
                     </b>
                 </Link>
             </div>
@@ -20,4 +22,8 @@ const Header = (props) => {
     )
 };
 
-export default Header
+const mapStateToProps = ({shoppingCart: {cartItems, cartTotalPrice}}) => {
+    return {cartItems, cartTotalPrice}
+}
+
+export default (connect(mapStateToProps)(Header))
