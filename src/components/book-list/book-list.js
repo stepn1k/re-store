@@ -3,7 +3,7 @@ import BookListItem from "../book-list-item";
 import {connect} from "react-redux";
 import withBookStoreService from "../hoc";
 import {fetchBooks, onBookAdded} from "../../actions"
-import "./book-list.css"
+import "./book-list.scss"
 import Spinner from "../spinner";
 import ErrorIndicator from "../error-indicator";
 

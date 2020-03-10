@@ -1,5 +1,5 @@
 import React from 'react';
-import './shopping-cart-table.css';
+import './shopping-cart-table.scss';
 import {connect} from "react-redux"
 import {onAllBooksRemoved, onBookAdded, onBookRemoved} from "../../actions";
 

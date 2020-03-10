@@ -3,8 +3,7 @@ import {Link} from "react-router-dom";
 import "./header.scss"
 import {connect} from "react-redux";
 
-const Header = (props) => {
-    const {cartItems, cartTotalPrice} = props;
+const Header = ({cartItems, cartTotalPrice}) => {
     const itemsCount = cartItems.length;
     return (
         <div className="header">
@@ -24,6 +23,6 @@ const Header = (props) => {
 
 const mapStateToProps = ({shoppingCart: {cartItems, cartTotalPrice}}) => {
     return {cartItems, cartTotalPrice}
-}
+};
 
 export default (connect(mapStateToProps)(Header))
